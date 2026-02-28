@@ -13,82 +13,88 @@ from typing import Callable, Iterable
 # TODO: Implement these functions in Task 0.1
 def mul(x: float, y: float) -> float:
     """Multiply two numbers."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return x * y  
 
 
 def id(x: float) -> float:
     """Identity function."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return x
 
 
 def add(x: float, y: float) -> float:
     """Add two numbers."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return x + y
 
 
 def neg(x: float) -> float:
     """Negate a number."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return -x
 
 
 def lt(x: float, y: float) -> float:
     """Less than comparison."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return 1.0 if x < y else 0.0
 
 
 def eq(x: float, y: float) -> float:
     """Equality comparison."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return 1.0 if x == y else 0.0
 
 
 def max(x: float, y: float) -> float:
     """Maximum of two numbers."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return x if x > y else y
 
 
 def is_close(x: float, y: float) -> float:
-    """Check if numbers are close."""
-    raise NotImplementedError("Implement in Task 0.1")
+    """Check if two numbers are close (within 1e-2)."""
+    return 1.0 if abs(x - y) < 1e-2 else 0.0  # Q8: What tolerance?
 
 
 def sigmoid(x: float) -> float:
     """Sigmoid activation function."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return 1.0 / (1.0 + math.exp(-x))
 
 
 def relu(x: float) -> float:
     """ReLU activation function."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return max(0.0, x)
 
 
 def log(x: float) -> float:
     """Natural logarithm."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return math.log(x)
 
 
 def exp(x: float) -> float:
     """Exponential function."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return math.exp(x)
 
 
 def inv(x: float) -> float:
     """Reciprocal function."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return 1.0 / x
 
 
 def log_back(x: float, grad: float) -> float:
-    """Gradient of log."""
-    raise NotImplementedError("Implement in Task 0.1")
+    """
+    Gradient of log(x) times incoming gradient.
+    Derivative of log(x) is 1/x.
+    """
+    return grad / x  # Q15: Divide by what?
 
 
 def inv_back(x: float, grad: float) -> float:
-    """Gradient of inv."""
-    raise NotImplementedError("Implement in Task 0.1")
+    """
+    Gradient of 1/x times incoming gradient.
+    Derivative of 1/x is -1/x^2.
+    """
+    return -grad / (x * x)  # Q16: What squared?
 
 
 def relu_back(x: float, grad: float) -> float:
     """Gradient of ReLU."""
-    raise NotImplementedError("Implement in Task 0.1")
+    return grad if x > 0 else 0.0
 
 
 # TODO: Implement these in Task 0.3
